@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,6 +12,12 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+//Language Translation
+Route::get('lang/switch/{lang}', function ($lang) {
+    Session::put('lang', $lang);
+    return redirect()->back();
+})->name('lang.switch');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
