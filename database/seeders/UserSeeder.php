@@ -14,7 +14,38 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = ['master', 'admin', 'guru', 'tatausaha', 'siswa'];
+        $users = [
+            'master',
+            'admin',
+            'kepsek',
+            'guru',
+            'tatausaha',
+            'wakasek',
+            'kaprog',
+            'gmapel',
+            'walas',
+            'siswa',
+            'tamu',
+            'pembpkl',
+            'adminpkl',
+            'pesertapkl',
+            'kaprodiak',
+            'kaprodibd',
+            'kaprodimp',
+            'kaprodirpl',
+            'kaproditkj',
+            'bpbk',
+            'alumni',
+            'panitiapkl',
+            'kaprakerinak',
+            'kaprakerinbd',
+            'kaprakerinmp',
+            'kaprakerinrpl',
+            'kaprakerintkj',
+            'guruprakerin',
+            'siswaprakerin',
+            'guruwali',
+        ];
         $default = [
             'password' => bcrypt('password'),
             'email_verified_at' => now(),
@@ -24,7 +55,7 @@ class UserSeeder extends Seeder
         foreach ($users as $value) {
             User::create([...$default, ...[
                 'name' => $value,
-                'email' => $value . '@gmail.com',
+                'email' => $value . '@lcks.com',
             ]])->assignRole($value);
         }
     }
