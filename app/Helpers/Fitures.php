@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-use App\Models\AppSupport\AppFitur;
+use App\Models\Konfigurasi\AppFitur;
 
 class Fitures
 {
